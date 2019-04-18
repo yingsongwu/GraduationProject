@@ -15,9 +15,10 @@
 ## 4.18版本修改为4.19版本
 由于Unreal内部对于类的重新封装，需要修改以下几个部分代码，才能运行
 GetMaterialAndObj.cpp
-4.18     | 4.19
--------- | -------- 
-260行`check(VertexCount == RenderData.VertexBuffer.GetNumVertices());`|`check(VertexCount == RenderData.VertexBuffers.StaticMeshVertexBuffer.GetNumVertices());`
-266行`const FVector& OSPos = RenderData.PositionVertexBuffer.VertexPosition(i);`|`const FVector& OSPos = RenderData.VertexBuffers.PositionVertexBuffer.VertexPosition(i);`
-279行`const FVector2D UV = RenderData.VertexBuffer.GetVertexUV(i, 0);`|`const FVector2D UV = RenderData.VertexBuffers.StaticMeshVertexBuffer.GetVertexUV(i, 0);`
-289行`const FVector& OSNormal = RenderData.VertexBuffer.VertexTangentZ(i);`|`const FVector& OSNormal = RenderData.VertexBuffers.StaticMeshVertexBuffer.VertexTangentZ(i);`
+
+| |4.18     | 4.19|
+|-|-------- | -------- |
+260行|`check(VertexCount == RenderData.VertexBuffer.GetNumVertices());`|`check(VertexCount == RenderData.VertexBuffers.StaticMeshVertexBuffer.GetNumVertices());`|
+266行|`const FVector& OSPos = RenderData.PositionVertexBuffer.VertexPosition(i);`|`const FVector& OSPos = RenderData.VertexBuffers.PositionVertexBuffer.VertexPosition(i);`|
+279行|`const FVector2D UV = RenderData.VertexBuffer.GetVertexUV(i, 0);`|`const FVector2D UV = RenderData.VertexBuffers.StaticMeshVertexBuffer.GetVertexUV(i, 0);`|
+289行|`const FVector& OSNormal = RenderData.VertexBuffer.VertexTangentZ(i);`|`const FVector& OSNormal = RenderData.VertexBuffers.StaticMeshVertexBuffer.VertexTangentZ(i);`|
